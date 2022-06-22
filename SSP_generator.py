@@ -1,5 +1,3 @@
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.pylab as pl
@@ -10,7 +8,7 @@ import glob
 import os
 from scipy import interpolate
 
-
+#####
 def IMF_Kroupa(masses, alpha):
     IMF=np.array([0 for i in masses],dtype=float)
     dy1=(np.power(.5,-alpha[2])-np.power(.5,-alpha[1]))
@@ -128,7 +126,7 @@ isochrone_names=list(isochrones.keys())
 
 bands=['F606Wmag','F814Wmag']
 SSP = SSP_generator(isochrones[isochrone_names[0]], bands, n_stars=100000)
-print(SSP.head())
+#print(SSP.head())
 SSP.head()
 
 ###############################
@@ -137,10 +135,10 @@ SSP.head()
 abs_mag_feature = np.array([5.5, 4.5]) 
 
 distandmodulus = 24
-print('distandmodulus= ', distandmodulus)
+#print('distandmodulus= ', distandmodulus)
 mag_feature = abs_mag_feature + distandmodulus
 SN_feature = [10,10]
-print('mag_feature=', mag_feature)
+#print('mag_feature=', mag_feature)
 
 bands_unc_coef=[[-23.85588548 , 0.7982657 ], [-24.53558396 , 0.84130151]]  #IC1613
 
@@ -157,7 +155,6 @@ bb = SSP[bands[1]] + distandmodulus
 aa = aa[( bb < magnitude_max[1]+1.193 )]
 bb = bb[( bb < magnitude_max[1]+1.193 )]
 
-print(bb.shape,bb.shape)
 
 aa = add_uncerntaties(aa,fit_param=bands_unc_coef[0], mag_feature = mag_feature[0], SN_feature = SN_feature[0])[0]
 bb = add_uncerntaties(bb,fit_param=bands_unc_coef[1], mag_feature = mag_feature[1], SN_feature = SN_feature[1])[0]
@@ -177,7 +174,7 @@ plt.colorbar(label='mass')
 plt.xlabel('g-i')  #don't forget chanfe the axis title if you chose different bands!
 pl.rcParams["figure.figsize"] = (8,8)
 #plt.xlim(colour_min,2)
-print(magnitude_max[1],magnitude_min[0])
+#print(magnitude_max[1],magnitude_min[0])
 #plt.ylim(magnitude_max[1],magnitude_min[0])
 plt.ylabel('g')
 plt.legend()
