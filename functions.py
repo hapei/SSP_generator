@@ -7,6 +7,20 @@ from scipy import interpolate
 
 #####
 def IMF_Kroupa(masses, alpha):
+
+    """Initial mass function
+
+    Calculate the Kroupa IMF.
+
+    Args:
+        masses (array): numpy vector. An array of mass between the min and max masses.
+        alpha (list): A list with three elements which are the Kroupa IMF slopes.
+
+    Returns:
+        array: An array
+    """
+
+
     IMF=np.array([0 for i in masses],dtype=float)
     dy1=(np.power(.5,-alpha[2])-np.power(.5,-alpha[1]))
     dy2=dy1+(np.power(.08,-alpha[1])-np.power(.08,-alpha[0]))
