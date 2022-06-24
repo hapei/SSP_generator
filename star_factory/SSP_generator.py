@@ -50,7 +50,7 @@ isochrone_names=list(isochrones.keys())
 
 bands=['F606Wmag','F814Wmag']
 SSP = func.SSP_generator(isochrones[isochrone_names[0]], bands, n_stars=100000)
-#print(SSP.head())
+print(SSP.shape)
 
 ###############################
 ###############################
