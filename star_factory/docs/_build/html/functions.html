@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Functions for SSP &mdash; SSP_generator 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to SSP_generator’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> SSP_generator
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Functions for SSP</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SSP_generator</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Functions for SSP</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/functions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="functions-for-ssp">
+<span id="functions"></span><h1>Functions for SSP<a class="headerlink" href="#functions-for-ssp" title="Permalink to this heading"></a></h1>
+<p>Function to generate SSPs.</p>
+<span class="target" id="module-functions"></span><dl class="py function">
+<dt class="sig sig-object py" id="functions.IMF_Kroupa">
+<span class="sig-prename descclassname"><span class="pre">functions.</span></span><span class="sig-name descname"><span class="pre">IMF_Kroupa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mass_lower_bound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mass_upper_bound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_mass_grid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0.3,</span> <span class="pre">1.3,</span> <span class="pre">2.3]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#functions.IMF_Kroupa" title="Permalink to this definition"></a></dt>
+<dd><p>Initial mass function</p>
+<p>Calculates the Kroupa IMF.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mass_lower_bound</strong> (<em>float</em>) – float. One number with the minimum mass the Kroupa IMF follows.</p></li>
+<li><p><strong>mass_upper_bound</strong> (<em>float</em>) – float. One number with the maximum mass the Kroupa IMF follows.</p></li>
+<li><p><strong>n_mass_grid</strong> (<em>int</em>) – integer. Number of the range of masses that the IMF will work with, between the minimum and maximum masses. Default is 1000000.</p></li>
+<li><p><strong>alpha</strong> (<em>array</em>) – numpy array. List of three elements, containing the slopes of the Kroupa IMF.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>distribution of masses of the IMF.
+array: distribution of the normalised IMF.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.SSP_generator">
+<span class="sig-prename descclassname"><span class="pre">functions.</span></span><span class="sig-name descname"><span class="pre">SSP_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isoch_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bands</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_stars</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distandmodulus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uncertainty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">absolute_mag_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([4,</span> <span class="pre">5])</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SN_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[10,</span> <span class="pre">10]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uncertainty_param</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[[-</span> <span class="pre">23.85588548,</span> <span class="pre">0.7982657],</span> <span class="pre">[-</span> <span class="pre">24.53558396,</span> <span class="pre">0.84130151]]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#functions.SSP_generator" title="Permalink to this definition"></a></dt>
+<dd><p>SSP Generator</p>
+<p>Generates a Simple Stellar Population from an Isochrone. Can also produce Color-Magnitude diagram of this SSP.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>isochrone_file</strong> (<em>file</em>) – .txt file. Isochrone models from the PARSEC-COLIBRI models (<a class="reference external" href="http://stev.oapd.inaf.it/cgi-bin/cmd">http://stev.oapd.inaf.it/cgi-bin/cmd</a>).</p></li>
+<li><p><strong>bands</strong> (<em>list</em>) – python list of strings. A list with two strings that contains the name of two bands, necessary for the production of the Color-Magnitude diagram. The first band must have shorter wavelengths than the second band.</p></li>
+<li><p><strong>n_stars</strong> (<em>int</em>) – integer. Number of stars that the function will process.</p></li>
+<li><p><strong>distandmodulus</strong> (<em>float</em>) – float. Distance modulus from us to the cluster. Unitless. Default is 0 (All stars have absolute magnitude).</p></li>
+<li><p><strong>uncertainity</strong> (<em>boolean</em><em>)</em><em>. Default is True</em><em>, </em><em>where it considers observational effects</em><em> (</em><em>simulated by HST observations</em>) – </p></li>
+<li><p><strong>absolute_mag_features</strong> (<em>array</em>) – numpy array with two values. Absolute magnitude of a stellar phase you want to observe with a specific signal-to-noise. One number for each band. Default is [4, 5] (Representing the main sequence turn-off). Values specified for the F606Wmag and F814Wmag bands (respectively) in the</p></li>
+<li><p><strong>SN_feature</strong> (<em>array</em>) – numpy array with two values. Photometry signal-to-noise of the absoulte magnitude feature of a stellar phase you want to observe. One number for each band. Default is [10, 10].</p></li>
+<li><p><strong>uncertainty_param</strong> (<em>list</em>) – python list with two lists. Each list represents the fitting parameter on the HST observational uncertainties. One list for each band. Default is [[-23.85588548 , 0.7982657 ], [-24.53558396 , 0.84130151]]. Values specified for the F606Wmag and F814Wmag bands (respectively) in the</p></li>
+<li><p><strong>plot</strong> (<em>boolean</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Plot of the Color-magnitude diagram of the SSP.
+DataFrame: SSP data, including the stellar mass, age, metallicity and the magnitudes of the bands specified.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>plot (optional)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.add_uncerntaties">
+<span class="sig-prename descclassname"><span class="pre">functions.</span></span><span class="sig-name descname"><span class="pre">add_uncerntaties</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">magnitudes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_param</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mag_feature</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">SN_feature</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#functions.add_uncerntaties" title="Permalink to this definition"></a></dt>
+<dd><p>Addition of the uncertainties</p>
+<p>Calculates the magnitude uncertainties for a given signal-to-noise of a feature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>magnitudes</strong> (<em>array</em>) – numpy array. Ideal magnitudes from the Isochrones, in mag.</p></li>
+<li><p><strong>uncertainty_param</strong> (<em>list</em>) – python list with two lists. Each list represents the fitting parameter on the HST observational uncertainties. One list for each band. Default is [[-23.85588548 , 0.7982657 ], [-24.53558396 , 0.84130151]]. Values specified for the F606Wmag and F814Wmag bands (respectively) in the</p></li>
+<li><p><strong>mag_feature</strong> (<em>array</em>) – numpy array with two values. Absolute magnitude of a stellar phase you want to observe with a specific signal-to-noise. One number for each band. Default is [4, 5] (Representing the main sequence turn-off). Values specified for the F606Wmag and F814Wmag bands (respectively) in the</p></li>
+<li><p><strong>SN_feature</strong> (<em>array</em>) – numpy array with two values. Photometry signal-to-noise of the absoulte magnitude feature of a stellar phase you want to observe. One number for each band. Default is [10, 10].</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>magnitude with uncertainties</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.poisonModel_Prediction_unc">
+<span class="sig-prename descclassname"><span class="pre">functions.</span></span><span class="sig-name descname"><span class="pre">poisonModel_Prediction_unc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#functions.poisonModel_Prediction_unc" title="Permalink to this definition"></a></dt>
+<dd><p>Exponential function</p>
+<p>Calculates the value of an exponential curve through the matrix of multiplication.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>array</em>) – numpy array. Design matrix of the exponetial curve.</p></li>
+<li><p><strong>b</strong> (<em>array</em>) – numpy array. Vertical matrix of the coefficents.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Exponential curve with design matrix X and coeffients b.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.read_isochrones">
+<span class="sig-prename descclassname"><span class="pre">functions.</span></span><span class="sig-name descname"><span class="pre">read_isochrones</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">isoch_files</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#functions.read_isochrones" title="Permalink to this definition"></a></dt>
+<dd><p>Isochrone File Read</p>
+<p>Reads the Isochrone files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>isoch_files</strong> (<em>file</em>) – .txt file. Isochrone models from the PARSEC-COLIBRI models (<a class="reference external" href="http://stev.oapd.inaf.it/cgi-bin/cmd">http://stev.oapd.inaf.it/cgi-bin/cmd</a>).</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dictionary with all the information of the Isochrone tables.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dictionary</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="functions.stellar_mass_generator">
+<span class="sig-prename descclassname"><span class="pre">functions.</span></span><span class="sig-name descname"><span class="pre">stellar_mass_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_stars</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mass_grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">IMF</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#functions.stellar_mass_generator" title="Permalink to this definition"></a></dt>
+<dd><p>Mass generator</p>
+<p>Calculates the distribution of stars (through random choice) of the stars according to the IMF.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_stars</strong> (<em>int</em>) – integer. Number of stars that the function will process.</p></li>
+<li><p><strong>mass_grid</strong> (<em>array</em>) – numpy array. See IMF_Kroupa for details.</p></li>
+<li><p><strong>IMF</strong> (<em>array</em>) – numpy array. See IMF_Kroupa for details.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Randomly generated masses taken from the IMF.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to SSP_generator’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Hadi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
