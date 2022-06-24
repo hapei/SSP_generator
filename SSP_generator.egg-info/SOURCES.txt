@@ -1,0 +1,9 @@
+README.md
+setup.py
+SSP_generator.egg-info/PKG-INFO
+SSP_generator.egg-info/SOURCES.txt
+SSP_generator.egg-info/dependency_links.txt
+SSP_generator.egg-info/top_level.txt
+star_factory/SSP_generator.py
+star_factory/__init__.py
+star_factory/functions.py
